@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-wrap: pretty;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #d6d5d5;
+}
+
+header {
+  width: 100%;
+  height: auto;
+}
+
+.titleImg {
+  /* background-color: #a6c4c4; */
+}
+
+.titleImg img {
+  height: 7rem;
+  width: auto;
+}
+
+.title {
+  /* background-color: #767cae; */
+}
+
+.title h1 {
+  /* background-color: #39a847; */
+  color: var(--titleColor);
+  font-size: 4rem;
+}
+
+.titlePara {
+  /* background-color: #93357d; */
+  color: var(--paraColor);
+  font-size: 2rem;
+}
+
+.accordion {
+  width: 70%;
+  margin: auto;
+  position: relative;
+}
+
+/* Hide checkboxes */
+.accordion-toggle,
+.accordion-reset {
+  display: none;
+}
+
+/* Style the header (label) */
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #856fc6;
+  border-radius: 0px 8px 8px 0px;
+  color: #ffffff;
+  padding: 1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  /* border: 1px solid #ddd; */
+  text-align: left;
+  position: relative;
+  border-left: 4px solid #ffffff;
+}
+
+/* Add + symbol */
+.accordionHeader::after {
+  content: "+"; /* Default symbol */
+  font-size: 2.5rem;
+  font-weight: bold;
+  position: absolute;
+  right: 15px;
+}
+
+/* Hide content by default */
+.accordion-content {
+  max-height: 0;
+  border-radius: 0px 8px 8px 0px;
+  overflow: hidden;
+  background: #ffffff;
+  margin-bottom: 1rem;
+  transition: max-height 0.4s ease-in-out, padding 0.2s ease;
+  padding: 0 15px;
+  border-left: 4px solid #856fc6;
+}
+
+.accordionTitle h5 {
+  font-family: inherit;
+  font-size: 2rem;
+}
+
+.websiteSnapCode {
+  background-color: transparent;
+  box-shadow: 5px -2px 10px -2px rgba(0, 0, 0, 0.3);
+}
+
+
+.logo {
+  height: 3rem !important;
+  width: auto;
+}
+
+.snapCode img {
+  height: auto !important;
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* Show content when checkbox is checked */
+.accordion-toggle:checked + .accordionHeader + .accordion-content {
+  max-height: 5000px; /* Adjust as needed */
+  padding: 15px;
+}
+
+/* Change "+" to "-" when opened */
+.accordion-toggle:checked + .accordionHeader::after {
+  content: "-";
+  font-size: 2.5rem;
+  font-weight: bold;
+  position: absolute;
+  right: 15px;
+}
+
+/* Uncheck other accordions when one is clicked */
+.accordion-toggle:checked ~ .accordion-toggle {
+  display: none;
+}
+
+/* When an open accordion is clicked again, it closes */
+.accordion-toggle:checked:focus {
+  display: block;
+}
+
+/* ::::: RESPONSIVE DESIGN DEVICE SIZES ::::: */
+
+/* for Responsive Target the ROW Code (display:grid) */
+
+/* Small devices (landscape phones, upto 576px and below) */
+@media (width <=576px) {
+  .grid-1,
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .accordion {
+    width: 90%;
+  }
+
+  .logo {
+    height: 2rem !important;
+    width: auto;
+  }
+
+  .accordionTitle h5 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Medium devices (tablets, upto 768px and above) */
+@media (width >=577px) and (width <=768px) {
+  .accordion {
+    width: 90%;
+  }
+}
+
+/* Large devices (Laptops, upto 992px and above) */
+@media (width >=769px) and (width <=992px) {
+  .accordion {
+    width: 90%;
+  }
+}
+
+/* X-Large devices (large desktops, upto 1200px and above) */
+@media (width >=993px) and (width <=1200px) {
+  .accordion {
+    width: 80%;
+  }
+}
+
+/* XX-Large devices (larger desktops, upto 1400px and above) */
+@media (width >=1200px) {
+  /* write code here */
+}
